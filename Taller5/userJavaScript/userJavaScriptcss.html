@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="Registro Usuario" content="Formulario de registro">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="usercss.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <nav id="menu">
+
+    </nav>
+    <section class="seccion">
+        <div class="cabecera">
+            <h2>Registro de Usuario</h1>
+        </div>
+        <form id="form" class="form" action="" onchange="return validar()">
+            <div class="registro">
+                <label for="id_usr">id_usr:</label>
+                <input type="text" placeholder="id_usr" id="id_usr" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="pais">Pais:</label>
+                <select name="Pais" id="pais" class="Pais">
+					<option value="0">Seleccione...</option>
+					<option value="1">Colombia</option>
+					<option value="2">Ecuador</option>
+					<option value="3">Peru</option>
+					<option value="4">Venezuela</option>
+					<option value="5">Argentina</option>
+					<option value="6">Brasil</option>
+					<option value="7">Uruguay</option>
+					<option value="8">Chile</option>
+					<option value="9">Panamá</option>
+				</select>
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="nombre">Nombre:</label>
+                <input type="text" placeholder="Nombre" id="nombre" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="nombre">Apellidos:</label>
+                <input type="text" placeholder="Apellidos" id="apellidos" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="direccion">Direccion:</label>
+                <input type="text" placeholder="Direccion" id="direccion" onchange="return validarDireccion()" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="ccUsuario">ccUsuario:</label>
+                <input type="text" placeholder="ccUsuario" id="ccUsuario" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="ccPassword">ccPassword:</label>
+                <input type="password" placeholder="ccPassword" id="ccPassword" onchange="return ingresoContraseña()" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="VerificacionPassword">Verificacion ccPassword:</label>
+                <input type="password" placeholder="VerificacionPassword" id="verificacionPassword" onchange="return validarContraseña()" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Email" id="email" onchange="return validarEmail()" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="registro">
+                <label for="telefono">Telefono:</label>
+                <input type="text" placeholder="Telefono" id="telefono" />
+                <small id="error" class="registroinvalido">El campo es requerido</small>
+            </div>
+            <div class="eleccion">
+                <label for="gustos">¿Desea agregar sus gustos?:</label><br>
+                <input type="radio" id="EleccionNegativa" name="eleccion" onclick="validarRadio(0)">
+                <label for="EleccionNegativa">No</label><br>
+                <input type="radio" id="Eleccionpositiva" name="eleccion" onclick="validarRadio(1)">
+                <label for="Eleccionpositiva">Si</label><br>
+            </div>
+            <div class="registro" id='gustos'>
+                <fieldset class="conjunto" id="conjunto" hidden>
+                    <legend>Gustos</legend>
+                    <div class="Color">
+                        <label for="Color">Color Favorito:</label>
+                        <select name="Color" id="Color" class="Color">
+					        <option value="0">Seleccione...</option>
+					        <option value="1">Rojo</option>
+					        <option value="2">Negro</option>
+					        <option value="3">Azul</option>
+					        <option value="4">Verde</option>
+					        <option value="5">Blanco</option>
+                            <option value="6">Gris</option>
+                            <option value="7">Otro</option>
+                        </select>
+                    </div>
+                    <div class="marca">
+                        <label for="marca">Marca Favorito:</label>
+                        <select name="marca" id="marca" class="marca">
+					        <option value="0">Seleccione...</option>
+					        <option value="1">BMW</option>
+					        <option value="2">Mercedez</option>
+					        <option value="3">KIA</option>
+					        <option value="4">Toyota</option>
+					        <option value="5">Tesla</option>
+                            <option value="6">Nissan</option>
+                            <option value="7">Otro</option>
+				        </select>
+                    </div>
+                    <div class="modelo">
+                        <label for="modelo">Modelo Favorito:</label>
+                        <select name="modelo" id="modelo" class="modelo">
+					        <option value="0">Seleccione...</option>
+					        <option value="1">Descapotable</option>
+					        <option value="2">Familiar</option>
+					        <option value="3">Deportivo</option>
+					        <option value="4">Todo terreno</option>
+					        <option value="5">Compacto</option>
+                            <option value="6">Otro</option>
+				        </select>
+                    </div>
+                    <div>
+                        <label for="rango">Rango de precio:</label>
+                        <input type="range" min="10.000.000" max="1.000.000.000" placeholder="rango" id="rango" />
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <aside id="columna">
+
+    </aside>
+    <footer id="pie">
+
+    </footer>
+    <script src="userJavaScript.js" type="text/JavaScript"></script>
+</body>
+
+</html>
