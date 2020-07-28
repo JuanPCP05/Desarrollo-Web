@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Recibido de formulario</title>
+	<link rel="stylesheet" href="previo.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+	<form action="recibido_submit" method="get" accept-charset="utf-8">
+		<div class="table-responsive-sm">
+		<table class="table">
+			<caption></caption>
+			<thead>
+				<tr class="bg-warning">
+					<th rowspan="2"></th>
+					<th><input type="text" id="sinbordetitulo" name="alimento" class="input-group" zise=10></th>
+				</tr>
+				<tr class="bg-warning">
+					<th>Alimento</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="table-info">
+					<td>Calorias (Kcal)</td>
+					<td><input type="text" id="sinborde" name="calorias" class="input-group" zise=3></td>
+				</tr>
+				<tr class="table-info">
+					<td>Grasas</td>
+					<td><input type="text" id="sinborde" name="grasas" class="input-group" zise=3></td>
+				</tr>
+				<tr class="table-info">
+					<td>Proteina</td>
+					<td><input type="text" id="sinborde" name="proteinas" class="input-group" zise=3></td>
+				</tr>
+				<tr class="table-info">
+					<td>Carbohidratos</td>
+					<td><input type="text" id="sinborde" name="carbohidratos" class="input-group" zise=3></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</form>
+	<form action="C:\Users\Juan\Desktop\UIS\Programacion Web\Desarrollo-Web\PrimerParcial\previo.html" method="post">
+	<input type="submit" value="Volver" class="btn btn-primary">
+</body>
+<script>
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var alimento = getParameterByName("alimento");
+var calorias = getParameterByName("calorias");
+var grasas = getParameterByName("grasas");
+var proteina = getParameterByName("proteina");
+var carbohidratos = getParameterByName("carbohidratos");
+
+document.getElementsByName("alimento")[0].value = alimento;
+document.getElementsByName("calorias")[0].value = calorias;
+document.getElementsByName("grasas")[0].value = grasas;
+document.getElementsByName("proteinas")[0].value = proteina;
+document.getElementsByName("carbohidratos")[0].value = carbohidratos;
+</script>
+</html>

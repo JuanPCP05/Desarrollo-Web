@@ -1,0 +1,21 @@
+.editar{
+	color: rgb(84,23,225);
+	cursor: pointer;
+}
+
+#sinborde{
+	border: 0;
+	text-align: center;
+	background-color: rgb(190, 229, 235);
+}
+
+#sinbordetitulo{
+	border: 0;
+	text-align: center;
+	background-color: rgb(255, 193, 7);
+}
+
+div{
+	width: 20%;
+	text-align: center;
+}
