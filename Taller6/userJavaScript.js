@@ -1,17 +1,10 @@
 const formulario = document.getElementById('form');
-const usuario = document.getElementById('id_usr');
-const pais = document.getElementById('pais');
 const nombre = document.getElementById('nombre');
 const apellidos = document.getElementById('apellidos');
-const direccion = document.getElementById('direccion');
-const ccUsuario = document.getElementById('ccUsuario');
 const contrasena = document.getElementById('ccPassword');
-const telefono = document.getElementById('telefono');
 const email = document.getElementById('email');
+const Usuario = document.getElementById('Usuario');
 const comprobarContrasena = document.getElementById('verificacionPassword');
-const radioSi = document.getElementById('EleccionNegativa');
-const radioNo = document.getElementById('Eleccionpositiva');
-const conjunto = document.getElementById('conjunto');
 
 
 
@@ -26,11 +19,6 @@ function validar() {
         apellidos.focus();
         apellidos.select();
     }
-    if (ccUsuario.value.length != 0 && (ccUsuario.value.length > 20 || ccUsuario.value.length < 10)) {
-        alert('El usuario es muy corto o sobrepasas el numero de caracteres indicado')
-        ccUsuario.focus();
-        ccUsuario.select();
-    }
 }
 
 function ingresoContraseña() {
@@ -38,7 +26,7 @@ function ingresoContraseña() {
     const caracteres = ['#', '%', '/', '&'];
     var i = 0;
     var error = 0;
-    if (contrasena.value.length != 0 && (contrasena.value.length < 15 || contrasena.value.length > 20)) {
+    if (contrasena.value.length != 0 && (contrasena.value.length < 5 || contrasena.value.length > 20)) {
         alert('La contraseña no comple con los requisitos');
         contrasena.focus();
         contrasena.select();
@@ -79,14 +67,6 @@ function validarContraseña() {
     }
 }
 
-function validarDireccion() {
-    if (direccion.value.indexOf("cll") != 0 && direccion.value.indexOf("cra") != 0 && direccion.value.indexOf("av") != 0 && direccion.value.indexOf("anv") != 0 && direccion.value.indexOf("trans") != 0) {
-        alert('La direccion no es valida');
-        direccion.focus();
-        direccion.select();
-    }
-}
-
 
 function validarEmail() {
     var vemail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -97,10 +77,28 @@ function validarEmail() {
     }
 }
 
-function validarRadio(x) {
-    if (x == 1) {
-        conjunto.style.display = 'block';
-    } else {
-        conjunto.style.display = 'none';
+function calcularEdad() {
+    let ahora = new Date();
+    let nacimiento = document.getElementById('fnacimiento').value;
+    let agno = nacimiento.split('-');
+    let edad = ahora.getFullYear() - agno[0];
+    document.getElementById('Edad').value = edad;
+}
+
+function validarUsuario() {
+    const caracteres = ['#', '%', '/', '&', '!'];
+    var i = 0;
+    var error = 0;
+    while (i < caracteres.length) {
+        if (Usuario.value.indexOf(caracteres[i]) == -1) {
+            error += 1;
+            console.log(error);
+        }
+        i++;
+    }
+    if (error != 5) {
+        alert('El usuario no debe contener caracteres especiales' + ' ' + caracteres);
+        Usuario.focus();
+        Usuario.select();
     }
 }
