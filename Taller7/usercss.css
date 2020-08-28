@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #9DFFB2;
+    font-family: 'sans-serif' sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.seccion {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 3);
+    overflow: hidden;
+    width: 480px;
+    max-width: 100%;
+}
+
+.cabecera {
+    border-bottom: 1px solid #fff;
+    background-color: #93FAA4;
+    padding: 20px 40px;
+}
+
+.cabecera h2 {
+    margin: 0px;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.registro {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.registro label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.registro input {
+    border: 2px solid rgb(194, 189, 189);
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+}
+
+.registro input:focus {
+    outline: 0;
+    border-color: lavender;
+}
+
+.registro small {
+    color: #FF1D1D;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.registro select {
+    border: 2px solid rgb(194, 189, 189);
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+}
+
+.eleccion input {
+    border: 2px solid rgb(194, 189, 189);
+    border-radius: 4px;
+    display: line;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px;
+    width: 10px;
+}
+
+.conjunto fieldset {
+    border: 2px solid rgb(194, 189, 189);
+}
+
+.registroinvalido small {
+    visibility: visible;
+}
+
+.registrovalid input {
+    border-color: #22f133;
+}
+
+.form button {
+    background-color: #93FAA4;
+    border: 2px solid #93FAA4;
+    border-radius: 4px;
+    color: rgb(5, 4, 4);
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
