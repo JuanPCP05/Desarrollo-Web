@@ -10,17 +10,17 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class AgregarComponent implements OnInit {
 
+  usuario: Usuario = new Usuario();
   constructor(private route:Router, private service:ServiceService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
-  Agregar(usuario:Usuario){
-    this.service.addUsuario(usuario)
+  
+  Guardar(){
+    this.service.addUsuario(this.usuario)
     .subscribe(data=>{
-      alert("Agregó con exito");
-      this.route.navigate(["listar"]);
+      alert("se agrego con exito...!!!");
+      this.route.navigate(["Listar"]);
     })
   }
-
 }

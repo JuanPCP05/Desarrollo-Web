@@ -18,6 +18,19 @@ export class ListarComponent implements OnInit {
     .subscribe(data=>{
       this.usuarios=data;
     });
+    console.log(this.usuarios);
+  }
+  Editar(usuario:Usuario):void{
+    localStorage.setItem("id",usuario.id.toString());
+    this.router.navigate(["Editar"]);
+  }
+
+  Eliminar(usuario:Usuario){
+    this.service.deleteUsuario(usuario)
+    .subscribe(data=>{
+      this.usuarios = this.usuarios.filter(p=>p!==usuario);
+      alert("Persona eliminada...");
+    })
   }
 
 }

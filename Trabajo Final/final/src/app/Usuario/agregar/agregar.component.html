@@ -1,72 +1,32 @@
-<style>
-    body,
-    .modal {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.5);
-        transition: all 500ms ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-    
-    #btn-modal:checked~.modal {
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .contenedor {
-        width: 400px;
-        height: 300px;
-        margin: auto;
-        background: #fff;
-        box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
-        transition: all 500ms ease;
-        position: relative;
-        transform: translateY(-30%);
-    }
-    
-    #btn-modal:checked~.modal .contenedor {
-        transform: translateY(0%);
-    }
-    
-    .contenedor header {
-        padding: 10px;
-        background: #db8046;
-        color: #fff;
-    }
-    
-    .contenedor label {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: #fff;
-        font-size: 15px;
-        cursor: pointer;
-    }
-    
-    #btn-modal {
-        display: none;
-    }
-    
-    .lbl-modal {
-        background: #fff;
-        padding: 10px 15px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    @media only screen and (min-width:320px) and (max-width:768px) {
-        .contenedor {
-            width: 95%;
-        }
-    }
-</style>
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar</h3>
+            <div class="clas-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="">Nombres:</label>
+                        <input [(ngModel)]="usuario.nombre" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Apellidos:</label>
+                        <input [(ngModel)]="usuario.apellido" name="apellido" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">cedula:</label>
+                        <input [(ngModel)]="usuario.cedula" name="cedula" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Correo:</label>
+                        <input [(ngModel)]="usuario.correo" name="correo" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Direccion:</label>
+                        <input [(ngModel)]="usuario.direccion" name="direccion" type="text" class="form-control">
+                    </div>
+                    <button (click)="Guardar()" class="btn btn-danger">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

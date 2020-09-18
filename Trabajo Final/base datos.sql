@@ -32,8 +32,7 @@ CREATE TABLE usuarios_producto(
 
 #-----Datos prueba------
 
-INSERT INTO usuarios (nombre, apellido, cedula, direccion, correo) VALUES
-('fsadfa', 'fasdfas', '12344', 'fsadfsa','fasdfsadf'),
-('fsadfa1', 'fasdfas1', '123441', 'fsadfsa1','fasdfsadf1');
+INSERT INTO usuarios (id, apellido, cedula, correo, direccion, nombre) VALUES
+(5,'fsadfa', 'fasdfas', '12344', 'fsadfsa','fasdfsadf');
 
-SELECT * FROM usuarios
+SELECT * from usuarios

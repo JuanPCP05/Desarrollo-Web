@@ -27,4 +27,5 @@ public List<Usuario> listar(){
 public Usuario agregar(@RequestBody Usuario u) {
 	return servicio.agregar(u);
 }
+
 }

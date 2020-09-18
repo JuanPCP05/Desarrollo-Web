@@ -9,13 +9,26 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
-  Url='http://localhost:8080/backend/Usuario';
+  Url='http://localhost:8080/api/v1/usuarios';
 
   getUsuarios(){
     return this.http.get<Usuario[]>(this.Url);
   }
 
   addUsuario(usuario:Usuario){
-    return this.http.post<Usuario>(this.Url,Usuario);
+    return this.http.post<Usuario>(this.Url , usuario);
+  }
+
+  getUsuarioid(id: number){
+    return this.http.get<Usuario>(this.Url+"/"+id);
+  }
+
+
+  updateUsuario(usuario:Usuario) {
+    return this.http.put(this.Url+"/"+usuario.id, usuario);
+  }
+
+  deleteUsuario(usuario:Usuario) {
+    return this.http.delete(this.Url+"/"+usuario.id);
   }
 }

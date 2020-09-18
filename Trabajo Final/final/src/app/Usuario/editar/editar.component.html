@@ -1,1 +1,37 @@
-<p>editar works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar</h3>
+            <div class="clas-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="">Id:{{usuario.id}}</label>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nombres:</label>
+                        <input [(ngModel)]="usuario.nombre" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Apellidos:</label>
+                        <input [(ngModel)]="usuario.apellido" name="apellido" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">cedula:</label>
+                        <input [(ngModel)]="usuario.cedula" name="cedula" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Correo:</label>
+                        <input [(ngModel)]="usuario.correo" name="correo" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Direccion:</label>
+                        <input [(ngModel)]="usuario.direccion" name="direccion" type="text" class="form-control">
+                    </div>
+                    <button (click)="Actulizar(usuario)" class="btn btn-danger">Guardar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
