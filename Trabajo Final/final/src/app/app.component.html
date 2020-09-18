@@ -1,0 +1,935 @@
+<!--Inicio de los estilos-->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Merriweather:wght@300&family=Pacifico&family=Rubik&display=swap');
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Rubik', sans-serif;
+        margin: 0;
+    }
+    /*-------------Estilos base------------------*/
+    
+    img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+    }
+    
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    
+    .container--flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .column {
+        width: 100%;
+    }
+    /*-------------Estilos header------------------*/
+    
+    .main-header {
+        width: 100%;
+    }
+    
+    .logo {
+        font-size: 1.8em;
+        color: #000000;
+        padding: 10px;
+        font-family: 'Pacifico', cursive;
+        font-weight: 100;
+    }
+    
+    .main-header-informationContact-phone {
+        background-color: #000000;
+        color: white;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    
+    .main-header-informationContact-location {
+        padding: 10px;
+        margin: 0;
+    }
+    
+    .main-header [class*="icon-"]::before {
+        position: relative;
+        top: 2px;
+        right: 2px;
+    }
+    /*-------------Estilos nav------------------*/
+    
+    .main-nav {
+        width: 100%;
+        position: relative;
+        z-index: 2000;
+        padding: 10px;
+    }
+    
+    .icon-menu {
+        display: block;
+        color: black;
+        border: 1px solid white;
+        border-radius: 3px;
+        width: 40px;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1.4em;
+    }
+    
+    .social-icon {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .social-icon [class*="icon-"] {
+        color: black;
+        margin-left: 4px;
+        padding-right: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        width: 34px;
+        height: 34px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    
+    .social-icon-link {
+        text-decoration: none;
+    }
+    
+    .menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        list-style: none;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s linear;
+    }
+    
+    .mostrar {
+        height: 198px;
+    }
+    
+    .menu--link {
+        display: block;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .menu--link:hover {
+        background: #292929;
+    }
+    
+    .menu--link-select {
+        background: #3a3b3a;
+    }
+    /*-------------Estilos Section banner------------------*/
+    
+    .banner {
+        margin-top: -55px;
+        position: relative;
+    }
+    
+    .banner::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        top: 0;
+    }
+    
+    .banner--img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    
+    .banner-contenido {
+        width: 90%;
+        color: white;
+        position: absolute;
+        text-align: center;
+        z-index: 1500;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 2em;
+        font-weight: bold;
+    }
+    /*-------------Estilos principales------------------*/
+    
+    .group-color .container {
+        background: #000000;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .main--title {
+        margin: 15px 0;
+        font-size: 1.8em;
+        font-family: 'Pacifico', cursive;
+        font-weight: 100;
+    }
+    
+    .main--text {
+        font-family: 'Merriweather', serif;
+    }
+    
+    .column-title {
+        font-size: 1.3em;
+        font-family: 'Pacifico', cursive;
+        font-weight: 100;
+    }
+    
+    .main-about-description.column:nth-child(2) {
+        padding: 10px;
+    }
+    
+    .btn {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        width: 120px;
+        background: #000000;
+        color: white;
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 4px;
+    }
+    
+    .today-notices .column {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .today-notices-image {
+        display: block;
+        margin: auto;
+        max-width: 350px;
+    }
+    
+    .today-notices-title {
+        font-size: 1.3em;
+        padding-top: 20px;
+        padding-bottom: 12px;
+    }
+    
+    .today-notices-title-principal {
+        font-family: 'Pacifico', cursive;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        font-size: 1.8em;
+        font-weight: 100;
+        margin: 30px;
+    }
+    
+    .today-notices-description {
+        font-size: 1.2em;
+        padding-bottom: 15px;
+        text-align: justify;
+    }
+    
+    .today-notice-readmore {
+        font-size: 1em;
+    }
+    /*-------------Estilos footer------------------*/
+    
+    .main-footer {
+        background: black;
+        color: white;
+        padding: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 0.8em;
+    }
+    
+    .copy {
+        margin: auto;
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .main-footer [class*="icon-"] {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .main-footer [class*="icon-"]::before {
+        position: relative;
+        top: 3px;
+        right: 5px;
+    }
+    
+    .group-title {
+        font-family: 'Pacifico', cursive;
+        font-size: 1.8em;
+        margin: 10px;
+    }
+    
+    .our-team {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .our-team .container--flex {
+        align-items: flex-start;
+    }
+    
+    .our-team-title {
+        font-family: 'Pacifico', cursive;
+        color: #000000;
+        font-weight: bold;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+    
+    .our-team-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    .our-team-txt {
+        padding: 10px;
+    }
+    
+    .contact .container--flex {
+        align-items: flex-start;
+    }
+    
+    .contact-information {
+        padding: 10px;
+        padding-top: 0px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #000000;
+    }
+    
+    .contact-information .column-title {
+        font-family: 'Pacifico' cursive;
+        font-weight: 100;
+    }
+    
+    .main--title {
+        text-align: center;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+    
+    .contact-information [class*="icon-"] {
+        font-size: 1.1em;
+        margin-right: 7px;
+        position: relative;
+    }
+    
+    .contact-information .social-icon {
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        padding-left: 5px;
+    }
+    
+    .contact-information .social-icon [class*="icon-"] {
+        background: black;
+        color: white;
+        margin-left: 5px;
+        margin-right: 3px;
+    }
+    
+    .column-txt {
+        font-size: 1em;
+    }
+    /*----------------Formulario--------------*/
+    
+    .formulario {
+        padding: 10px;
+        padding-top: 0;
+    }
+    
+    .formulario-label,
+    .formulario-txt,
+    .formulario-textarea {
+        display: block;
+        width: 100%;
+    }
+    
+    .formulario-txt {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .formulario-textarea {
+        min-height: 100px;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: 150px;
+    }
+    
+    .formulario-btn {
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    
+    body,
+    .modal {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 500ms ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    #btn-modal:checked~.modal {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .contenedor {
+        width: 400px;
+        height: 300px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+        transition: all 500ms ease;
+        position: relative;
+        transform: translateY(-30%);
+    }
+    
+    #btn-modal:checked~.modal .contenedor {
+        transform: translateY(0%);
+    }
+    
+    .form {
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    
+    .contenedor header {
+        padding: 10px;
+        background: #000000;
+        color: #fff;
+    }
+    
+    .contenedor label {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    #btn-modal {
+        display: none;
+    }
+    
+    .lbl-modal {
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    /*-------------Estilos responsives------------------*/
+    
+    @media screen and (min-width:480px) {
+        .main-header {
+            background: #000000;
+        }
+        .logo {
+            color: white;
+        }
+        .main-header-informationContact {
+            text-align: right;
+        }
+        .main-header-informationContact-phone {
+            background: none;
+        }
+        .main-header-informationContact-location {
+            color: white;
+        }
+        .main-nav {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .main-footer .container--flex {
+            align-items: flex-start;
+        }
+        .banner {
+            margin-top: -140px;
+            z-index: -1000;
+        }
+        .banner-contenido {
+            font-size: 2.2em;
+        }
+        .banner--img {
+            height: 600;
+            object-fit: cover;
+        }
+        .column-50 {
+            width: 49%;
+        }
+        .column-50-25 {
+            width: 49%;
+        }
+        .column-title {
+            padding-bottom: -30px;
+            padding-top: 20px;
+        }
+        .main-about-description.column:nth-child(2) {
+            padding-left: 20px;
+            font-size: 0.9em;
+        }
+        .btn-contact {
+            margin: 0;
+        }
+        .today-notices .column {
+            border: 1px solid #cfcfcf;
+            padding: 5px;
+        }
+        .today-notices-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .today-notices-title {
+            padding-top: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .column-33 {
+            width: 32%;
+        }
+    }
+    
+    @media screen and (min-width:768px) {
+        .main--title {
+            font-size: 2em;
+        }
+        .main-about-description.column {
+            margin-top: 30px;
+        }
+        .main-about-description.column:nth-child(2) {
+            font-size: 1em;
+        }
+        .main-about-description.column:nth-child(2) .column-text {
+            line-height: 30px;
+        }
+        .column-title {
+            font-size: 1.5em;
+        }
+        .imgcolumn {
+            height: 300px;
+            object-fit: cover;
+        }
+        .column-50-25 {
+            width: 24.5%;
+        }
+        .today-notices-title-principal {
+            font-size: 2.2em;
+        }
+    }
+    
+    @media screen and (min-width:1024px) {
+        .container {
+            width: 1000px;
+        }
+        .logo {
+            font-size: 2em;
+            padding: 0;
+        }
+        .main-header-informationContact-phone,
+        .main-header-informationContact-location {
+            padding-right: 0;
+            font-size: 1.15em;
+        }
+        .main-nav {
+            padding: 0;
+        }
+        .icon-menu {
+            display: none;
+        }
+        .banner--img {
+            height: 700px;
+        }
+        .banner-contenido {
+            font-size: 2.5em;
+        }
+        .menu {
+            display: flex;
+            width: auto;
+            height: auto;
+            position: static;
+        }
+        .menu--link {
+            padding: 15px;
+        }
+        .group-color .container {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .main--title {
+            font-size: 2.3em;
+        }
+        .main-footer {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    
+    @media screen and (min-width:1600px) {
+        .container {
+            width: 1400px;
+        }
+        .today-notices-image {
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+</style>
+<!--Fin de los estilos-->
+
+
+<header class="main-header">
+    <div class="container container--flex">
+        <div class="logo-container column column-50">
+            <h1 class="logo">TuReloj</h1>
+        </div>
+        <div class="main-header-informationContact column column-50">
+            <div class="main-header-informationContact-phone">
+                <span class="icon-phone"> (057) 6345423 </span>
+            </div>
+            <div class="main-header-informationContact-location">
+                <span class="icon-places"> Colombia </span>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="main-nav">
+    <div class="contianer container--flex">
+        <span class="icon-menu" id="btnmenu"></span>
+        <ul class="menu" id="menu">
+            <li class="menu--item">
+                <a class="menu--link menu--link-select" href="#">Inicio</a>
+            </li>
+            <li class="menu--item">
+                <a class="menu--link" href="#nosotros">Nosotros</a>
+            </li>
+            <li class="menu--item">
+                <a class="menu--link" href="#productos">Productos</a>
+            </li>
+            <li class="menu--item">
+                <a class="menu--link" href="#contactos">Contactanos</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section class="banner">
+    <img src="../assets/images/banner1.jpg" alt="" class="banner--img">
+    <div class="banner-contenido">Los mejores productos a tus servicios</div>
+</section>
+<main class="main">
+    <section class="group  group-color">
+        <div class="container">
+            <h2 class="main--title">Bienvenidos a su relojeria de confianza</h2>
+            <p class="main--txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos hic suscipit praesentium sunt. Aspernatur repudiandae nihil ab quam, repellat illo doloribus animi modi asperiores odit commodi officia reprehenderit. Dicta, atque?</p>
+        </div>
+    </section>
+    <section class="group our-team" id="nosotros">
+        <h2 class="group-title">Nuestro equipo</h2>
+        <div class="container--flex">
+            <div class="column column-50-25">
+                <h3 class="our-team-title">Empleados</h3>
+                <img src="../assets/images/vendedor.jpg" alt="" class="our-team-img">
+                <p class="our-team-txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus id odit nesciunt quod animi corrupti eligendi, est quam porro optio consectetur voluptatibus reiciendis nobis minima, possimus illum quaerat voluptatum quae!</p>
+            </div>
+            <div class="column column-50-25">
+                <h3 class="our-team-title">Equipos</h3>
+                <img src="../assets/images/relojero.jpg" alt="" class="our-team-img">
+                <p class="our-team-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt sit ut illo sapiente voluptatem natus similique maiores enim! In iusto culpa totam sint officiis aut nulla delectus sapiente dolore saepe?</p>
+            </div>
+            <div class="column column-50-25">
+                <h3 class="our-team-title">Productos</h3>
+                <img src="../assets/images/productos.jpg" alt="" class="our-team-img">
+                <p class="our-team-txt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, deserunt culpa sit officia nam similique, quaerat dolor dolores nobis et praesentium minima asperiores quae neque ab? Beatae corporis minus culpa.</p>
+            </div>
+            <div class="column column-50-25">
+                <h3 class="our-team-title">Clientes</h3>
+                <img src="../assets/images/cliente.jpg" alt="" class="our-team-img">
+                <p class="our-team-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit blanditiis voluptatum ab asperiores ad odio obcaecati necessitatibus pariatur, omnis, nam quibusdam ea suscipit labore molestiae, impedit natus vero consequatur fugiat.</p>
+            </div>
+        </div>
+    </section>
+    <section class="group today-notices" id="productos">
+        <h2 class="today-notices-title-principal">Sección de productos</h2>
+        <div class="container container--flex">
+            <div class="column column-50-25">
+                <img src="../assets/images/reloj.jpg" alt="" class="today-notices-image">
+                <div class="today-notices-title">Productos</div>
+                <div class="today-notices-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tempore maiores minus sit.</div>
+                <input type="checkbox" id="btn-modal">
+                <button class="btn btn-success"><label for="btn-modal">Comprar</label></button>
+                <div class="modal">
+                    <div class="contenedor">
+                        <header>¡Bienvenidos!</header>
+                        <label for="btn-modal"><a href="/">X</a></label>
+                        <div class="contenido">
+                            <div>
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Nombre</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Apellido</label>
+                                            <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Cedula</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Cedula">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Correo</label>
+                                            <input type="email" class="form-control" id="inputPassword4" placeholder="Correo">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress2"></label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
+                                    </div>
+                                    <button (click)="Agregar()" type="submit" class="btn btn-success">Comprar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column column-50-25">
+                <img src="../assets/images/reloj.jpg" alt="" class="today-notices-image">
+                <div class="today-notices-title">Productos</div>
+                <div class="today-notices-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tempore maiores minus sit.</div>
+                <input type="checkbox" id="btn-modal">
+                <button class="btn btn-success"><label for="btn-modal">Comprar</label></button>
+                <div class="modal">
+                    <div class="contenedor">
+                        <header>¡Bienvenidos!</header>
+                        <label for="btn-modal"><a href="/">X</a></label>
+                        <div class="contenido">
+                            <div>
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Nombre</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Apellido</label>
+                                            <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Cedula</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Cedula">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Correo</label>
+                                            <input type="email" class="form-control" id="inputPassword4" placeholder="Correo">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress2"></label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
+                                    </div>
+                                    <button (click)="Agregar()" type="submit" class="btn btn-success">Comprar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column column-50-25">
+                <img src="../assets/images/reloj.jpg" alt="" class="today-notices-image">
+                <div class="today-notices-title">Productos</div>
+                <div class="today-notices-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tempore maiores minus sit.</div>
+                <input type="checkbox" id="btn-modal">
+                <button class="btn btn-success"><label for="btn-modal">Comprar</label></button>
+                <div class="modal">
+                    <div class="contenedor">
+                        <header>¡Bienvenidos!</header>
+                        <label for="btn-modal"><a href="/">X</a></label>
+                        <div class="contenido">
+                            <div>
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Nombre</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Apellido</label>
+                                            <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Cedula</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Cedula">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Correo</label>
+                                            <input type="email" class="form-control" id="inputPassword4" placeholder="Correo">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress2"></label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
+                                    </div>
+                                    <button (click)="Agregar()" type="submit" class="btn btn-success">Comprar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column column-50-25">
+                <img src="../assets/images/reloj.jpg" alt="" class="today-notices-image">
+                <div class="today-notices-title">Productos</div>
+                <div class="today-notices-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tempore maiores minus sit.</div>
+                <input type="checkbox" id="btn-modal">
+                <button class="btn btn-success"><label for="btn-modal">Comprar</label></button>
+                <div class="modal">
+                    <div class="contenedor">
+                        <header>¡Bienvenidos!</header>
+                        <label for="btn-modal"><a href="/">X</a></label>
+                        <div class="contenido">
+                            <div>
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Nombre</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Apellido</label>
+                                            <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Cedula</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Cedula">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Correo</label>
+                                            <input type="email" class="form-control" id="inputPassword4" placeholder="Correo">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress2"></label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
+                                    </div>
+                                    <button (click)="Agregar()" type="submit" class="btn btn-success">Comprar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="group  contact" id="contactos">
+        <h2 class="main--title">Contacto</h2>
+        <div class="container container--flex">
+            <div class="contact-information column column-50">
+                <h3 class="column-title">Informacion de contacto</h3>
+                <p class="column-txt information">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat voluptatibus similique delectus sunt! Voluptatem tempora, exercitationem rem nobis eum necessitatibus</p>
+                <p class="column-txt"><span class="icon-phone"></span>Telefono 1: 999-999-9999</p>
+                <p class="column-txt"><span class="icon-phone"></span>Telefono 2: 999-999-9999</p>
+                <p class="column-txt"><span class="icon-places"></span>Location</p>
+                <p class="column-txt"><span class="icon-mail"></span>correo@correo.com</p>
+            </div>
+            <form action="" method="post" class="formulario column column-50">
+                <label for="" class="formulario-label">Nombre: </label>
+                <input type="text" class="formulario-txt" name="nombre">
+                <label for="" class="formulario-label">Correo: </label>
+                <input type="text" class="formulario-txt" name="correo">
+                <label for="" class="formulario-label">Telefono: </label>
+                <input type="text" class="formulario-txt" name="telefono">
+                <label for="" class="formulario-label">Mensaje: </label>
+                <textarea name="mensaje" id="" cols="30" rows="10" class="formulario-textarea"></textarea>
+                <input type="submit" class="formulario-btn btn" value="Enviar">
+            </form>
+        </div>
+    </section>
+</main>
+<footer class="main-footer">
+    <div class="container container--flex">
+        <div class="column column-33">
+            <h2 class="column-title">¿Que nos caracteriza?</h2>
+            <p class="column-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat velit ad praesentium pariatur eos. Eum quam ea temporibus cupiditate.</p>
+        </div>
+        <div class="column column-33">
+            <h2 class="column-title">Contáctanos</h2>
+            <p class="column-txt">Direccion</p>
+            <p class="column-txt">Telefono</p>
+            <p class="column-txt">Correo</p>
+        </div>
+        <div class="column column-33">
+            <h2 class="column-title">Siguenos en nuestras redes</h2>
+            <p class="column-txt"><a href="" class="icon-facebook">Siguenos en Facebook</a></p>
+        </div>
+        <p class="copy">Derechos de autor reservados &copy;2020-2021</p>
+    </div>
+</footer>
+
+
+<router-outlet></router-outlet>

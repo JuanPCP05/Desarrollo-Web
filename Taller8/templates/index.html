@@ -23,17 +23,17 @@
         <form id="form" class="form" action="/" method="POST" onchange="return validar()">
             <div class="registro">
                 <label for="nombre">Nombre:</label>
-                <input type="text" placeholder="Nombre" id="nombre" name="nombre" />
+                <input type="text" placeholder="Nombre" id="nombre" name="nombre" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div class="registro">
                 <label for="Apellidos">Apellidos:</label>
-                <input type="text" placeholder="Apellidos" id="apellidos" name="apellidos" />
+                <input type="text" placeholder="Apellidos" id="apellidos" name="apellidos" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div>
                 <label for="tdocumento">Tipo de documento:</label>
-                <select name="tdocumento" id="tdocumento" class="form-control">
+                <select name="tdocumento" id="tdocumento" class="form-control" required>
                     <option value="0">Seleccione...</option>
                     {% for doc in documento %}
                     <option value="{{ doc.0 }}">{{ doc.1 }}</option>
@@ -42,12 +42,12 @@
             </div>
             <div class="registro">
                 <label for="documento">Documento:</label>
-                <input type="text" placeholder="documento" id="documento" name="documento" />
+                <input type="text" placeholder="documento" id="documento" name="documento" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div>
                 <label for="nacimiento">Lugar de nacimiento:</label>
-                <select name="nacimiento" id="nacimiento" class="form-control">
+                <select name="nacimiento" id="nacimiento" class="form-control" required>
                     <option value="0">Seleccione...</option>
                     {% for ciud in ciudades %}
                     <option value="{{ ciud.0 }}">{{ ciud.1 }}</option>
@@ -56,7 +56,7 @@
             </div>
             <div class="registro">
                 <label for="fnacimiento">Fecha nacimiento:</label>
-                <input type="date" placeholder="Fecha nacimiento" id="fnacimiento" name="fnacimiento" onchange="return calcularEdad()" />
+                <input type="date" placeholder="Fecha nacimiento" id="fnacimiento" name="fnacimiento" onchange="return calcularEdad()" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div class="registro">
@@ -66,32 +66,32 @@
             </div>
             <div class="registro">
                 <label for="Usuario">Usuario:</label>
-                <input type="text" placeholder="Usuario" id="Usuario" name="Usuario" onchange="return validarUsuario()" />
+                <input type="text" placeholder="Usuario" id="Usuario" name="Usuario" onchange="return validarUsuario()" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div class="registro">
                 <label for="email">Email:</label>
-                <input type="email" placeholder="Email" id="email" name="email" onchange="return validarEmail()" />
+                <input type="email" placeholder="Email" id="email" name="email" onchange="return validarEmail()" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div class="registro">
                 <label for="telefono">Telefono:</label>
-                <input type="telefono" placeholder="telefono" id="telefono" name="telefono" />
+                <input type="telefono" placeholder="telefono" id="telefono" name="telefono" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div class="registro">
                 <label for="ccPassword">ccPassword:</label>
-                <input type="password" placeholder="ccPassword" id="ccPassword" name="ccPassword" onchange="return ingresoContraseña()" />
+                <input type="password" placeholder="ccPassword" id="ccPassword" name="ccPassword" onchange="return ingresoContraseña()" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div class="registro">
                 <label for="VerificacionPassword">Verificacion ccPassword:</label>
-                <input type="password" placeholder="VerificacionPassword" id="verificacionPassword" name="verificacionPassword" onchange="return validarContraseña()" />
+                <input type="password" placeholder="VerificacionPassword" id="verificacionPassword" name="verificacionPassword" onchange="return validarContraseña()" required/>
                 <small id="error" class="registroinvalido">El campo es requerido</small>
             </div>
             <div>
                 <label for="residencia">Lugar de residencia:</label>
-                <select name="residencia" id="residencia" class="form-control">
+                <select name="residencia" id="residencia" class="form-control" required>
                     <option value="0">Seleccione...</option>
                     {% for ciud in ciudades %}
                     <option value="{{ ciud.0 }}">{{ ciud.1 }}</option>
